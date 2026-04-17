@@ -391,16 +391,26 @@
     messages.scrollTop = messages.scrollHeight;
   }
 
-  function showSuccessNotice() {
+  function showSuccessNotice(withBooking = false) {
     const div = document.createElement('div');
     div.className = 'sarah-success-notice';
-    div.innerHTML = `
-      <strong>✓ Got it — you're on the list</strong>
-      Check your email for confirmation. A specialist will call within one business hour.
-      <button class="sarah-save-btn" onclick="window.sarahChat.saveTranscript()">
-        Save My Conversation
-      </button>
-    `;
+    if (withBooking) {
+      div.innerHTML = `
+        <strong>One last step</strong>
+        Tap "Lock In My Appointment" above to confirm your slot. We'll email you the details right after.
+        <button class="sarah-save-btn" onclick="window.sarahChat.saveTranscript()">
+          Save My Conversation
+        </button>
+      `;
+    } else {
+      div.innerHTML = `
+        <strong>✓ Request received</strong>
+        Check your email for confirmation. A specialist will call within one business hour to lock in a time.
+        <button class="sarah-save-btn" onclick="window.sarahChat.saveTranscript()">
+          Save My Conversation
+        </button>
+      `;
+    }
     messages.appendChild(div);
     messages.scrollTop = messages.scrollHeight;
   }
@@ -533,9 +543,10 @@
           if (data.error) throw new Error(data.error);
           addBubble(data.message, 'agent');
           if (data.availableSlots && data.availableSlots.length > 0) showSlotButtons(data.availableSlots);
-          if (data.bookingLink) showBookingButton(data.bookingLink);
+          const hasBooking = !!data.bookingLink;
+          if (hasBooking) showBookingButton(data.bookingLink);
           if (data.urgentSent) showUrgentNotice();
-          else if (data.emailSent) showSuccessNotice();
+          else if (data.emailSent) showSuccessNotice(hasBooking);
           setInputEnabled(true);
         })
         .catch(() => {
