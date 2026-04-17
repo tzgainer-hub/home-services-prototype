@@ -123,8 +123,11 @@ nav {
   align-items: center;
   gap: 24px;
 }
-.logo { display: flex; align-items: center; line-height: 1.2; flex-shrink: 0; }
-.logo-img { max-height: 54px; width: auto; max-width: 280px; object-fit: contain; }
+.logo { display: flex; align-items: center; gap: 12px; line-height: 1.2; flex-shrink: 0; }
+.logo-img { max-height: 62px; width: auto; max-width: 340px; object-fit: contain; display: block; }
+@media (max-width: 768px) {
+  .logo-img { max-height: 48px; max-width: 220px; }
+}
 .logo-text { display: flex; flex-direction: column; }
 .logo-name {
   font-family: 'Outfit', sans-serif;
@@ -479,6 +482,52 @@ nav {
 .hero-review-dots { display: flex; gap: 6px; margin-top: 12px; }
 .rdot { width: 6px; height: 6px; border-radius: 50%; background: var(--border-strong); transition: all 0.3s; cursor: pointer; }
 .rdot.active { background: var(--orange); width: 18px; border-radius: 3px; }
+
+/* ─── SERVICE AREA STRIP (between hero and trust bar) ─── */
+.service-area-strip {
+  background: var(--bg-warm);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 15px 24px;
+}
+.service-area-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.service-area-label {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  font-size: 0.74rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--slate);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+.service-area-label svg { color: var(--steel); }
+.service-area-cities {
+  font-size: 0.9rem;
+  color: var(--text);
+  font-weight: 500;
+  line-height: 1.55;
+}
+.service-area-cities strong {
+  font-weight: 700;
+  color: var(--slate);
+}
+@media (max-width: 768px) {
+  .service-area-strip { padding: 12px 16px; }
+  .service-area-label { font-size: 0.68rem; letter-spacing: 0.12em; }
+  .service-area-cities { font-size: 0.82rem; }
+  .service-area-inner { gap: 10px; }
+}
 
 /* ─── TRUST BAR (awards strip) ─── */
 .trust-bar {
@@ -1223,11 +1272,25 @@ footer {
 }
 .footer-logo-name {
   font-family: 'Outfit', sans-serif;
-  font-size: 1.4rem;
+  font-size: 1.95rem;
   font-weight: 800;
   color: #fff;
-  margin-bottom: 4px;
-  letter-spacing: -0.01em;
+  margin-bottom: 6px;
+  letter-spacing: -0.015em;
+  line-height: 1.05;
+}
+.footer-logo-wordmark {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+.footer-logo-wordmark sup {
+  font-size: 0.6rem;
+  color: rgba(255,255,255,0.5);
+  font-weight: 600;
+  top: -0.9em;
+  position: relative;
 }
 .footer-logo-sub {
   font-size: 0.68rem;

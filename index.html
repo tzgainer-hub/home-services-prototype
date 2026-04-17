@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="images/favicon.png" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -39,11 +40,8 @@
   <!-- STICKY NAVIGATION -->
   <nav id="main-nav">
     <div class="nav-inner">
-      <a href="index.html" class="logo">
-        <div class="logo-text">
-          <span class="logo-name">Basement Repair Specialists</span>
-          <span class="logo-sub">Wisconsin · Since 1999</span>
-        </div>
+      <a href="index.html" class="logo" aria-label="Basement Repair Specialists — Home">
+        <img class="logo-img" src="images/logo.png" alt="Basement Repair Specialists — A Great Job. At a Great Price." />
       </a>
       <ul class="nav-links">
         <li><a href="index.html" class="nav-active">Home</a></li>
@@ -149,6 +147,17 @@
       </div>
     </div>
   </section>
+
+  <!-- SERVICE AREA STRIP -->
+  <div class="service-area-strip">
+    <div class="service-area-inner">
+      <span class="service-area-label">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 22s-8-4.5-8-11.8a8 8 0 1 1 16 0c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
+        Serving
+      </span>
+      <span class="service-area-cities"><strong>Appleton</strong> · <strong>Green Bay</strong> · <strong>Madison</strong> · <strong>Milwaukee</strong> · Oshkosh · Sheboygan · Wausau · Eau Claire · &amp; all of Wisconsin</span>
+    </div>
+  </div>
 
   <!-- TRUST BAR -->
   <div class="trust-bar">
