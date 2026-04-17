@@ -169,8 +169,17 @@ async function getAvailableSlots(preferenceDays, preferenceTime, startWeekOffset
   }));
 }
 
-function buildCalendlyLink(name, email) {
+function buildCalendlyLink(name, email, slotIso) {
   const params = new URLSearchParams({ name: name || '', email: email || '' });
+  if (slotIso) {
+    // Pre-select the date in BUSINESS_TZ so Calendly opens on the right day
+    const d = new Date(slotIso);
+    const yyyy = d.toLocaleString('en-US', { timeZone: BUSINESS_TZ, year: 'numeric' });
+    const mm   = d.toLocaleString('en-US', { timeZone: BUSINESS_TZ, month: '2-digit' });
+    const dd   = d.toLocaleString('en-US', { timeZone: BUSINESS_TZ, day: '2-digit' });
+    params.set('month', `${yyyy}-${mm}`);
+    params.set('date',  `${yyyy}-${mm}-${dd}`);
+  }
   return `${CALENDLY_SCHEDULING_URL}?${params.toString()}`;
 }
 
@@ -374,6 +383,7 @@ app.post('/api/chat/start', async (_req, res) => {
       urgentDispatched: false,
       slotsShown: false,
       availableSlots: [],
+      selectedSlot: null,
       homeownerName: null,
       homeownerEmail: null,
       homeownerPhone: null,
@@ -490,7 +500,8 @@ app.post('/api/chat/message/:sessionId', async (req, res) => {
         patientMsg.includes(slot.display.toLowerCase().split(',')[0])
       );
       if (selected) {
-        bookingLink = buildCalendlyLink(session.homeownerName, session.homeownerEmail);
+        session.selectedSlot = selected;
+        bookingLink = buildCalendlyLink(session.homeownerName, session.homeownerEmail, selected.iso);
         session.availableSlots = [];
       }
     }
@@ -528,8 +539,8 @@ app.post('/api/chat/message/:sessionId', async (req, res) => {
         bodyText: assistantText,
       }).catch((e) => console.error('[lead email]', e.message));
 
-      const confirmLink = bookingLink || (session.availableSlots.length > 0
-        ? buildCalendlyLink(session.homeownerName, session.homeownerEmail)
+      const confirmLink = bookingLink || (session.selectedSlot
+        ? buildCalendlyLink(session.homeownerName, session.homeownerEmail, session.selectedSlot.iso)
         : null);
       emailHomeownerConfirmation(
         session.homeownerEmail,
