@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Services — Basement Repair Specialists</title>
+  <meta name="description" content="Basement waterproofing, foundation repair, crawl space encapsulation, egress windows, basement finishing, and drainage systems. Wisconsin's BBB Torch Award–winning specialists." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .svc-detail { background: #fff; }
+    .svc-detail:nth-of-type(even) { background: var(--slate-bg); }
+    .svc-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: center;
+    }
+    .svc-row.reverse .svc-visual-col { order: 2; }
+    .svc-detail:nth-of-type(even) .svc-row { direction: rtl; }
+    .svc-detail:nth-of-type(even) .svc-row > * { direction: ltr; }
+    .svc-icon-wrap {
+      width: 64px; height: 64px;
+      background: var(--orange-bg);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--orange);
+      margin-bottom: 20px;
+    }
+    .svc-name {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      font-weight: 800;
+      color: var(--slate);
+      margin-bottom: 14px;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+    }
+    .svc-lead {
+      font-size: 1.05rem;
+      color: var(--muted);
+      line-height: 1.72;
+      margin-bottom: 24px;
+    }
+    .svc-features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px 20px;
+      margin-bottom: 28px;
+    }
+    .svc-feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text);
+      line-height: 1.5;
+    }
+    .svc-feature svg {
+      color: var(--green);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .svc-cta-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .svc-visual-col {
+      background: linear-gradient(135deg, var(--slate) 0%, var(--slate-mid) 100%);
+      border-radius: 18px;
+      padding: 48px 40px;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+      min-height: 340px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      box-shadow: var(--shadow-lg);
+    }
+    .svc-visual-col::before {
+      content: '';
+      position: absolute;
+      top: -80px; right: -80px;
+      width: 260px; height: 260px;
+      border-radius: 50%;
+      background: rgba(234,106,31,0.15);
+    }
+    .svc-visual-col::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+      background-size: 40px 40px;
+      opacity: 0.6;
+    }
+    .svc-visual-inner { position: relative; z-index: 1; }
+    .svc-visual-kicker {
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 14px;
+    }
+    .svc-visual-headline {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.15;
+      margin-bottom: 16px;
+      letter-spacing: -0.01em;
+    }
+    .svc-visual-list { list-style: none; padding: 0; }
+    .svc-visual-list li {
+      padding: 8px 0 8px 26px;
+      position: relative;
+      font-size: 0.92rem;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.55;
+    }
+    .svc-visual-list li::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 14px;
+      width: 14px; height: 14px;
+      background: var(--orange);
+      mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>") center / contain no-repeat;
+      -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>") center / contain no-repeat;
+    }
+    @media (max-width: 1024px) {
+      .svc-row { grid-template-columns: 1fr; gap: 36px; }
+      .svc-detail:nth-of-type(even) .svc-row { direction: ltr; }
+    }
+    @media (max-width: 640px) {
+      .svc-features { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="topbar-left">
+        <div class="topbar-item">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-8-4.5-8-11.8a8 8 0 1 1 16 0c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
+          Serving All of Wisconsin
+        </div>
+        <span class="topbar-badge">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          2025 BBB Torch Award Winner
+        </span>
+      </div>
+      <div class="topbar-right">
+        <a href="tel:8555547246" class="topbar-phone">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.61 4.38 2 2 0 0 1 3.59 2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.06 6.06l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 17z"/></svg>
+          (855) 554-7246
+        </a>
+        <a href="estimate.html" class="topbar-link">Free Estimate</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <nav id="main-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-text">
+          <span class="logo-name">Basement Repair Specialists</span>
+          <span class="logo-sub">Wisconsin · Since 1999</span>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html" class="nav-active">Our Services</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="index.html#service-area">Service Area</a></li>
+        <li><a href="index.html#reviews">Reviews</a></li>
+      </ul>
+      <div class="nav-right">
+        <a href="tel:8555547246" class="nav-phone-btn">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.61 4.38 2 2 0 0 1 3.59 2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.06 6.06l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 17z"/></svg>
+          (855) 554-7246
+        </a>
+        <a href="estimate.html" class="nav-book-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 5v14M5 12h14"/></svg>
+          <span>Free Estimate</span>
+        </a>
+      </div>
+      <button class="nav-hamburger" onclick="toggleMobileMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="index.html">Home</a>
+      <a href="services.html">Our Services</a>
+      <a href="about.html">About Us</a>
+      <a href="index.html#service-area">Service Area</a>
+      <a href="index.html#reviews">Reviews</a>
+      <a href="tel:8555547246">(855) 554-7246</a>
+      <a href="estimate.html" class="mobile-book">Get My Free Estimate →</a>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <div class="page-hero-eyebrow">Our Services</div>
+      <h1 class="page-hero-title">Every Basement Problem.<br><em>One Trusted Specialist.</em></h1>
+      <p class="page-hero-desc">From water in the basement to cracks in the foundation — we diagnose it honestly, quote it fairly, and stand behind it for life.</p>
+      <div class="page-hero-breadcrumb"><a href="index.html">Home</a> · Our Services</div>
+    </div>
+  </section>
+
+  <!-- SERVICE DETAILS -->
+
+  <!-- Waterproofing -->
+  <section class="svc-detail" id="waterproofing">
+    <div class="section-inner">
+      <div class="svc-row">
+        <div class="reveal">
+          <div class="svc-icon-wrap">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+          </div>
+          <h2 class="svc-name">Basement Waterproofing</h2>
+          <p class="svc-lead">Water in the basement doesn't fix itself — it gets worse. We diagnose where the water is actually coming from and install the right system for your foundation, not a one-size-fits-all package.</p>
+          <div class="svc-features">
+            <div class="svc-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Interior drain tile systems</div>
+            <div class="svc-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Exterior foundation sealing</div>
+            <div class="svc-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Sump pumps &amp; battery backups</div>
+            <div class="svc-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Vapor barriers &amp; wall panels</div>
+            <div class="svc-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Crack injection &amp; sealing</div>
+            <div class="svc-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Transferable lifetime warranty</div>
+          </div>
+          <div class="svc-cta-row">
+            <a href="estimate.html" class="btn-primary">Get My Free Assessment</a>
+            <a href="tel:8555547246" class="btn-call">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.61 4.38 2 2 0 0 1 3.59 2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.06 6.06l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 17z"/></svg>
+              Call
+            </a>
+          </div>
+        </div>
+        <div class="svc-visual-col svc-visual-col reveal">
+          <div class="svc-visual-inner">
+            <div class="svc-visual-kicker">Most Requested Service</div>
+            <div class="svc-visual-headline">The right system for the real problem.</div>
+            <ul class="svc-visual-list">
+              <li>Hydrostatic pressure → interior drain tile + sump</li>
+              <li>Cracks in the wall → injection + exterior sealing</li>
+              <li>Seasonal seepage → vapor barrier + drainage plane</li>
+              <li>Flooded floor → full perimeter system + battery backup</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Foundation -->
+  <section class="svc-detail" id="foundation">
+    <div class="section-inner">
+      <div class="svc-row">
+        <div class="svc-visual-col reveal">
+          <div class="svc-visual-inner">
+            <div class="svc-visual-kicker">Structural Repair</div>
+            <div class="svc-visual-headline">Stabilized. Straightened. Sealed.</div>
+            <ul class="svc-visual-list">
+              <li>Carbon fiber straps for bowed walls</li>
+              <li>Wall anchors for serious bowing or cracking</li>
+              <li>Helical &amp; push piers for settling footings</li>
+              <li>Engineer-reviewed repair plans for every job</li>
+            </ul>
+          </div>
+        </div>
+        <div class="reveal">
+          <div class="svc-icon-wrap">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 21V8l9-5 9 5v13"/><path d="M9 21V12h6v9"/></svg>
+          </div>
+          <h2 class="svc-name">Foundation Repair</h2>
+          <p class="svc-lead">Bowed walls and settling foundations don't need to mean a new house — but they do need to be handled right. Our engineer-backed solutions stabilize your foundation and give you back peace of mind.</p>
+          <div class="svc-features">
+            <div class="svc-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Bowed wall repair</div>
+            <div class="svc-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Foundation crack repair</div>
+            <div class="svc-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Settled footing correction</div>
+            <div class="svc-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Wall anchor systems</div>
+            <div class="svc-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Helical &amp; push piers</div>
+            <div class="svc-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Engineer-reviewed plans</div>
+          </div>
+          <div class="svc-cta-row">
+            <a href="estimate.html" class="btn-primary">Get My Free Assessment</a>
+            <a href="tel:8555547246" class="btn-call">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.61 4.38 2 2 0 0 1 3.59 2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.06 6.06l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 17z"/></svg>
+              Call
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Crawl Space -->
+  <section class="svc-detail" id="crawlspace">
+    <div class="section-inner">
+      <div class="svc-row">
+        <div class="reveal">
+          <div class="svc-icon-wrap">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 12h16M4 18h16M4 6h16M6 2v20M18 2v20"/></svg>
+          </div>
+          <h2 class="svc-name">Crawl Space Encapsulation</h2>
+          <p class="svc-lead">Up to 50% of the air you breathe upstairs came from the crawl space. Moisture, mold, pests, cold floors — encapsulation fixes it all. Healthier home, lower bills, higher resale value.</p>
+          <div class="svc-features">
+            <div class="svc-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Full vapor barrier installation</div>
+            <div class="svc-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Dehumidification systems</div>
+            <div class="svc-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Wall insulation &amp; air sealing</div>
+            <div class="svc-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Mold remediation</div>
+            <div class="svc-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Pest &amp; rodent exclusion</div>
+            <div class="svc-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Warmer floors, lower bills</div>
+          </div>
+          <div class="svc-cta-row">
+            <a href="estimate.html" class="btn-primary">Get My Free Assessment</a>
+            <a href="tel:8555547246" class="btn-call">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.61 4.38 2 2 0 0 1 3.59 2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.06 6.06l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 17z"/></svg>
+              Call
+            </a>
+          </div>
+        </div>
+        <div class="svc-visual-col reveal">
+          <div class="svc-visual-inner">
+            <div class="svc-visual-kicker">Healthier Home</div>
+            <div class="svc-visual-headline">Seal it. Dry it. Feel the difference.</div>
+            <ul class="svc-visual-list">
+              <li>Eliminate musty smells throughout the house</li>
+              <li>Cut heating bills 15-20% in winter</li>
+              <li>Protect insulation &amp; wood framing from rot</li>
+              <li>Add documented value before selling</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Egress -->
+  <section class="svc-detail" id="egress">
+    <div class="section-inner">
+      <div class="svc-row">
+        <div class="svc-visual-col reveal">
+          <div class="svc-visual-inner">
+            <div class="svc-visual-kicker">Code-Compliant · Installed in a Day</div>
+            <div class="svc-visual-headline">Natural light. A legal bedroom. A safe exit.</div>
+            <ul class="svc-visual-list">
+              <li>Wisconsin building code–compliant sizing</li>
+              <li>Turns unfinished space into a legal bedroom</li>
+              <li>Steel or composite window wells</li>
+              <li>Most installations completed in one day</li>
+            </ul>
+          </div>
+        </div>
+        <div class="reveal">
+          <div class="svc-icon-wrap">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="3" width="18" height="18" rx="1"/><line x1="12" y1="3" x2="12" y2="21"/><line x1="3" y1="12" x2="21" y2="12"/></svg>
+          </div>
+          <h2 class="svc-name">Egress Windows</h2>
+          <p class="svc-lead">Thinking of finishing the basement? You'll need egress. We install code-compliant egress windows that add natural light, create legal bedrooms, and give your family a safe exit in an emergency.</p>
+          <div class="svc-features">
+            <div class="svc-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Code-compliant installation</div>
+            <div class="svc-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Concrete cutting &amp; forming</div>
+            <div class="svc-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Steel &amp; composite window wells</div>
+            <div class="svc-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Safety ladders &amp; covers</div>
+            <div class="svc-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Drainage integration</div>
+            <div class="svc-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Most jobs done in 1 day</div>
+          </div>
+          <div class="svc-cta-row">
+            <a href="estimate.html" class="btn-primary">Get My Free Assessment</a>
+            <a href="tel:8555547246" class="btn-call">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.61 4.38 2 2 0 0 1 3.59 2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.06 6.06l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 17z"/></svg>
+              Call
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Finishing -->
+  <section class="svc-detail" id="finishing">
+    <div class="section-inner">
+      <div class="svc-row">
+        <div class="reveal">
+          <div class="svc-icon-wrap">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="2" y1="12" x2="22" y2="12"/><rect x="5" y="14" width="5" height="5"/></svg>
+          </div>
+          <h2 class="svc-name">Basement Finishing</h2>
+          <p class="svc-lead">A finished basement can add 400-1000 sq ft of livable space — family rooms, home offices, in-law suites, media rooms. We build it right so moisture doesn't come back to ruin it.</p>
+          <div class="svc-features">
+            <div class="svc-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Moisture-managed framing</div>
+            <div class="svc-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Drywall, flooring &amp; trim</div>
+            <div class="svc-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Licensed electrical &amp; plumbing</div>
+            <div class="svc-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Egress window integration</div>
+            <div class="svc-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Custom bars, bathrooms, theaters</div>
+            <div class="svc-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Starts with waterproofing</div>
+          </div>
+          <div class="svc-cta-row">
+            <a href="estimate.html" class="btn-primary">Get My Free Design Visit</a>
+            <a href="tel:8555547246" class="btn-call">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.61 4.38 2 2 0 0 1 3.59 2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.06 6.06l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 17z"/></svg>
+              Call
+            </a>
+          </div>
+        </div>
+        <div class="svc-visual-col reveal">
+          <div class="svc-visual-inner">
+            <div class="svc-visual-kicker">Turn Space Into Value</div>
+            <div class="svc-visual-headline">Built dry. Built right. Built to last.</div>
+            <ul class="svc-visual-list">
+              <li>We fix the water problem FIRST — then finish</li>
+              <li>Mold-resistant materials below grade</li>
+              <li>Full turnkey — one crew, one warranty</li>
+              <li>Typical ROI: 70-80% at resale</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Drainage -->
+  <section class="svc-detail" id="drainage">
+    <div class="section-inner">
+      <div class="svc-row">
+        <div class="svc-visual-col reveal">
+          <div class="svc-visual-inner">
+            <div class="svc-visual-kicker">The Systems Behind The System</div>
+            <div class="svc-visual-headline">Working 24/7 — whether you're home or not.</div>
+            <ul class="svc-visual-list">
+              <li>Battery-backup sumps for power outages</li>
+              <li>Wi-Fi–connected water alarms</li>
+              <li>Interior perimeter drain tile</li>
+              <li>Exterior drainage &amp; downspout extensions</li>
+            </ul>
+          </div>
+        </div>
+        <div class="reveal">
+          <div class="svc-icon-wrap">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><path d="M12 6v12M6 12h12"/></svg>
+          </div>
+          <h2 class="svc-name">Drainage &amp; Sump Systems</h2>
+          <p class="svc-lead">Waterproofing is only as good as the drainage behind it. We install the pumps, drain tile, and backup systems that keep water moving away from your home — 24/7, through every storm.</p>
+          <div class="svc-features">
+            <div class="svc-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Primary sump pumps</div>
+            <div class="svc-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Battery backup systems</div>
+            <div class="svc-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Interior drain tile</div>
+            <div class="svc-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Exterior French drains</div>
+            <div class="svc-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Wi-Fi water alarms</div>
+            <div class="svc-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Gutter &amp; downspout drainage</div>
+          </div>
+          <div class="svc-cta-row">
+            <a href="estimate.html" class="btn-primary">Get My Free Assessment</a>
+            <a href="tel:8555547246" class="btn-call">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.61 4.38 2 2 0 0 1 3.59 2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.06 6.06l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 17z"/></svg>
+              Call
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <div class="cta-band">
+    <div class="cta-band-inner">
+      <div class="cta-band-eyebrow">Free · No-Pressure Estimate</div>
+      <h2>Not sure which service<br>you <em>actually need?</em></h2>
+      <p>We'll come take a look, diagnose the real problem, and give you a written quote. Zero pressure. That's been our promise since 1999.</p>
+      <div class="cta-band-actions">
+        <a href="estimate.html" class="btn-white">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          Get My Free Estimate
+        </a>
+        <a href="tel:8555547246" class="btn-outline-white">(855) 554-7246</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo-name">Basement Repair Specialists</div>
+          <span class="footer-logo-sub">A Great Job. At a Great Price.®</span>
+          <p class="footer-bio">Wisconsin's BBB Torch Award–winning basement, foundation, and waterproofing specialists. Locally owned since 1999.</p>
+          <div class="footer-trust-badges">
+            <div class="footer-trust-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>BBB A+</div>
+            <div class="footer-trust-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>2025 Torch Award</div>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">Our Services</div>
+          <div class="footer-links">
+            <a href="#waterproofing">Waterproofing</a>
+            <a href="#foundation">Foundation Repair</a>
+            <a href="#crawlspace">Crawl Space</a>
+            <a href="#egress">Egress Windows</a>
+            <a href="#finishing">Basement Finishing</a>
+            <a href="#drainage">Drainage</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">Company</div>
+          <div class="footer-links">
+            <a href="about.html">About Us</a>
+            <a href="index.html#reviews">Reviews</a>
+            <a href="index.html#service-area">Service Area</a>
+            <a href="estimate.html">Free Estimate</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">Get In Touch</div>
+          <div class="footer-location">
+            <div class="footer-location-name">Main Office</div>
+            <p>1400 S Van Dyke Rd<br>Appleton, WI 54914</p>
+            <a href="tel:8555547246">(855) 554-7246</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 Basement Repair Specialists LLC</div>
+        <div style="display:flex;gap:20px;"><a href="#">Privacy</a><a href="#">Terms</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile sticky -->
+  <div class="mobile-sticky-cta">
+    <a href="tel:8555547246" class="mobile-sticky-btn mobile-sticky-call">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.61 4.38 2 2 0 0 1 3.59 2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.06 6.06l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 17z"/></svg>
+      Call
+    </a>
+    <a href="estimate.html" class="mobile-sticky-btn mobile-sticky-book">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+      Estimate
+    </a>
+    <button onclick="if(window.sarahChat){sarahChat.toggle();}" class="mobile-sticky-btn mobile-sticky-text" style="font-family:inherit;border:none;cursor:pointer;" aria-label="Chat with Sarah">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      Chat
+    </button>
+  </div>
+
+  <script>
+    function toggleMobileMenu() { document.getElementById('mobile-menu').classList.toggle('open'); }
+    document.querySelectorAll('.mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => document.getElementById('mobile-menu').classList.remove('open'));
+    });
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 60);
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+  </script>
+
+  <!-- Sarah — 24/7 virtual dispatcher -->
+  <script src="/chat-widget.js"></script>
+
+</body>
+</html>

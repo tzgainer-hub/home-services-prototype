@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us — Basement Repair Specialists · Wisconsin's BBB Torch Award Winner</title>
+  <meta name="description" content="Locally owned since 1999. 2025 BBB Torch Award for Ethics Winner. Meet the Wisconsin basement and foundation specialists who built their reputation on doing the right thing." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .story-section { background: #fff; padding: 92px 24px; }
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 64px;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .story-visual {
+      position: relative;
+      aspect-ratio: 4/5;
+      border-radius: 20px;
+      background: linear-gradient(135deg, var(--slate) 0%, var(--slate-mid) 100%);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+    }
+    .story-visual::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+    .story-visual::after {
+      content: '';
+      position: absolute;
+      top: -60px;
+      right: -60px;
+      width: 240px;
+      height: 240px;
+      border-radius: 50%;
+      background: rgba(234,106,31,0.18);
+    }
+    .story-badge {
+      position: relative;
+      text-align: center;
+      color: #fff;
+    }
+    .story-badge-ring {
+      width: 220px; height: 220px;
+      border-radius: 50%;
+      border: 3px solid var(--orange);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 28px;
+      background: rgba(234,106,31,0.15);
+      position: relative;
+    }
+    .story-badge-ring::before {
+      content: '';
+      position: absolute;
+      inset: -14px;
+      border: 1.5px dashed rgba(234,106,31,0.4);
+      border-radius: 50%;
+    }
+    .story-badge-icon {
+      width: 100px; height: 100px;
+      color: var(--orange);
+    }
+    .story-badge-year {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.22em;
+      color: var(--orange);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .story-badge-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+    }
+    .story-badge-sub {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.5;
+      max-width: 300px;
+      margin: 0 auto;
+    }
+    .story-accent-card {
+      position: absolute;
+      bottom: 28px;
+      left: 28px;
+      right: 28px;
+      background: #fff;
+      border-radius: 12px;
+      padding: 16px 20px;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.25);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .story-accent-icon {
+      width: 44px; height: 44px;
+      border-radius: 10px;
+      background: var(--green-bg);
+      color: var(--green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .story-accent-text strong {
+      display: block;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.95rem;
+      color: var(--slate);
+      font-weight: 800;
+    }
+    .story-accent-text span {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+    .story-content .section-eyebrow { margin-bottom: 16px; }
+    .story-body p {
+      font-size: 1.02rem;
+      color: var(--text);
+      line-height: 1.82;
+      margin-bottom: 18px;
+    }
+    .story-body strong { color: var(--slate); font-weight: 700; }
+
+    .values-section { background: var(--slate-bg); }
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+    .value-card {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 32px 30px;
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--orange);
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .value-card:nth-child(2) { border-top-color: var(--steel); }
+    .value-card:nth-child(3) { border-top-color: var(--green); }
+    .value-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+    .value-num {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 14px;
+    }
+    .value-card:nth-child(2) .value-num { color: var(--steel); }
+    .value-card:nth-child(3) .value-num { color: var(--green); }
+    .value-card h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.28rem;
+      font-weight: 800;
+      color: var(--slate);
+      margin-bottom: 12px;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+    }
+    .value-card p {
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.72;
+    }
+
+    .torch-section {
+      background: linear-gradient(135deg, var(--slate) 0%, var(--slate-mid) 100%);
+      color: #fff;
+      padding: 92px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+    .torch-section::before {
+      content: '';
+      position: absolute;
+      top: -120px; right: -120px;
+      width: 400px; height: 400px;
+      border-radius: 50%;
+      background: rgba(234,106,31,0.12);
+    }
+    .torch-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 64px;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .torch-content .section-eyebrow { color: var(--orange); }
+    .torch-content .section-eyebrow::before { background: var(--orange); }
+    .torch-content .section-title { color: #fff; }
+    .torch-content .section-title em { color: var(--orange); }
+    .torch-quote {
+      border-left: 3px solid var(--orange);
+      padding-left: 22px;
+      margin: 28px 0;
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #fff;
+      line-height: 1.5;
+      font-style: italic;
+    }
+    .torch-quote-by {
+      display: block;
+      margin-top: 14px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      font-style: normal;
+      color: var(--orange);
+      letter-spacing: 0.04em;
+    }
+    .torch-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 36px;
+    }
+    .torch-stat {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 10px;
+      padding: 22px 18px;
+      text-align: center;
+    }
+    .torch-stat-num {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--orange);
+      display: block;
+      line-height: 1;
+      margin-bottom: 6px;
+      letter-spacing: -0.02em;
+    }
+    .torch-stat-label {
+      font-size: 0.76rem;
+      color: rgba(255,255,255,0.65);
+      font-weight: 600;
+    }
+
+    .torch-visual {
+      position: relative;
+    }
+    .torch-big-badge {
+      background: #fff;
+      color: var(--slate);
+      border-radius: 20px;
+      padding: 44px 38px;
+      box-shadow: 0 28px 64px rgba(0,0,0,0.35);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .torch-big-badge::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 6px;
+      background: var(--orange);
+    }
+    .torch-big-icon {
+      width: 80px; height: 80px;
+      color: var(--orange);
+      margin: 0 auto 20px;
+    }
+    .torch-big-kicker {
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 12px;
+    }
+    .torch-big-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--slate);
+      line-height: 1.1;
+      margin-bottom: 10px;
+      letter-spacing: -0.02em;
+    }
+    .torch-big-sub {
+      font-size: 0.92rem;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 22px;
+    }
+    .torch-big-stamp {
+      display: inline-block;
+      background: var(--slate);
+      color: #fff;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 9px 18px;
+      border-radius: 100px;
+    }
+
+    .community-section { background: #fff; }
+    .community-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+    .community-card {
+      text-align: center;
+      padding: 26px 20px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--bg-warm);
+    }
+    .community-icon {
+      width: 52px; height: 52px;
+      background: var(--orange-bg);
+      color: var(--orange);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 14px;
+    }
+    .community-card h4 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--slate);
+      margin-bottom: 6px;
+    }
+    .community-card p {
+      font-size: 0.84rem;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    @media (max-width: 1024px) {
+      .story-grid { grid-template-columns: 1fr; gap: 40px; }
+      .story-visual { max-width: 460px; margin: 0 auto; aspect-ratio: 1/1; }
+      .torch-grid { grid-template-columns: 1fr; gap: 44px; }
+      .values-grid { grid-template-columns: 1fr; }
+      .community-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="topbar-left">
+        <div class="topbar-item">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-8-4.5-8-11.8a8 8 0 1 1 16 0c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
+          Serving All of Wisconsin
+        </div>
+        <span class="topbar-badge">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          2025 BBB Torch Award Winner
+        </span>
+      </div>
+      <div class="topbar-right">
+        <a href="tel:8555547246" class="topbar-phone">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.61 4.38 2 2 0 0 1 3.59 2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.06 6.06l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 17z"/></svg>
+          (855) 554-7246
+        </a>
+        <a href="estimate.html" class="topbar-link">Free Estimate</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <nav id="main-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-text">
+          <span class="logo-name">Basement Repair Specialists</span>
+          <span class="logo-sub">Wisconsin · Since 1999</span>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Our Services</a></li>
+        <li><a href="about.html" class="nav-active">About Us</a></li>
+        <li><a href="index.html#service-area">Service Area</a></li>
+        <li><a href="index.html#reviews">Reviews</a></li>
+      </ul>
+      <div class="nav-right">
+        <a href="tel:8555547246" class="nav-phone-btn">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.61 4.38 2 2 0 0 1 3.59 2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.06 6.06l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 17z"/></svg>
+          (855) 554-7246
+        </a>
+        <a href="estimate.html" class="nav-book-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 5v14M5 12h14"/></svg>
+          <span>Free Estimate</span>
+        </a>
+      </div>
+      <button class="nav-hamburger" onclick="toggleMobileMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="index.html">Home</a>
+      <a href="services.html">Our Services</a>
+      <a href="about.html">About Us</a>
+      <a href="index.html#service-area">Service Area</a>
+      <a href="index.html#reviews">Reviews</a>
+      <a href="tel:8555547246">(855) 554-7246</a>
+      <a href="estimate.html" class="mobile-book">Get My Free Estimate →</a>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <div class="page-hero-eyebrow">About Us</div>
+      <h1 class="page-hero-title">Built on <em>Ethics.</em><br>Proven by Reviews.</h1>
+      <p class="page-hero-desc">25 years of doing basement repair the right way — and the award from the Better Business Bureau to prove it.</p>
+      <div class="page-hero-breadcrumb"><a href="index.html">Home</a> · About Us</div>
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section class="story-section">
+    <div class="story-grid">
+      <div class="story-visual reveal">
+        <div class="story-badge">
+          <div class="story-badge-ring">
+            <svg class="story-badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+          </div>
+          <div class="story-badge-year">BBB · 2025</div>
+          <div class="story-badge-title">Torch Award<br>for Ethics.</div>
+          <div class="story-badge-sub">The Better Business Bureau's highest honor — earned, not bought.</div>
+        </div>
+        <div class="story-accent-card">
+          <div class="story-accent-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <div class="story-accent-text">
+            <strong>A+ Accredited Since 2003</strong>
+            <span>22 years of perfect standing with the BBB</span>
+          </div>
+        </div>
+      </div>
+      <div class="story-content reveal">
+        <div class="section-eyebrow">Our Story</div>
+        <h2 class="section-title">The <em>right way</em> has always<br>been the harder way.</h2>
+        <div class="story-body">
+          <p>We started in 1999 with a simple idea: treat every customer's basement the way we'd want our own handled. No high-pressure sales. No surprise "site condition" charges after the work started. Just honest diagnoses, fair quotes, and work we'd be proud to put our name on.</p>
+          <p>A lot of contractors talk about integrity. <strong>We built a business on it — and it took 25 years to get the trophy to prove it.</strong> In 2025, the Better Business Bureau named us the Torch Award Winner for marketplace ethics. One winner. One year. One industry. That's us.</p>
+          <p>What does that actually mean for you? It means when we show up at your house, the person at your door has something to protect — a reputation that's worth more than any single job. That changes how the whole conversation goes.</p>
+          <div style="display: flex; gap: 12px; margin-top: 28px;">
+            <a href="estimate.html" class="btn-primary">Get My Free Estimate</a>
+            <a href="tel:8555547246" class="btn-call">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.61 4.38 2 2 0 0 1 3.59 2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.06 6.06l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 17z"/></svg>
+              Call Us
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUES -->
+  <section class="values-section">
+    <div class="section-inner">
+      <div class="section-header centered reveal">
+        <div class="section-eyebrow">What We Stand For</div>
+        <h2 class="section-title">Three Rules. <em>Non-Negotiable.</em></h2>
+        <p class="section-desc">These aren't slogans printed on a wall. They're how every estimate, every job, and every follow-up call actually gets handled.</p>
+      </div>
+      <div class="values-grid">
+        <div class="value-card reveal">
+          <div class="value-num">Rule One</div>
+          <h3>If we wouldn't do it in our own home, we won't recommend it for yours.</h3>
+          <p>Over-selling is the #1 complaint in this industry. We'd rather lose the sale than lose your trust. Our specialists are paid salary — not commission — so the right diagnosis is always the right answer.</p>
+        </div>
+        <div class="value-card reveal">
+          <div class="value-num">Rule Two</div>
+          <h3>The price we quote is the price you pay.</h3>
+          <p>No mid-job change orders. No surprise fees for things we should have caught on the estimate. If something unexpected comes up, we stop, show you what we found, and get your permission before another dollar moves.</p>
+        </div>
+        <div class="value-card reveal">
+          <div class="value-num">Rule Three</div>
+          <h3>We come back. For life.</h3>
+          <p>Our transferable lifetime warranty isn't fine print — it's the whole point. If the water comes back, we come back. Even if you sold the house. Even if it's 15 years later. That's the promise.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TORCH AWARD SECTION -->
+  <section class="torch-section">
+    <div class="torch-grid">
+      <div class="torch-visual reveal">
+        <div class="torch-big-badge">
+          <svg class="torch-big-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+          </svg>
+          <div class="torch-big-kicker">Better Business Bureau</div>
+          <div class="torch-big-title">Torch Award<br>Winner · 2025</div>
+          <div class="torch-big-sub">For Marketplace Ethics — a single winner each year, chosen from every BBB-accredited business in the category.</div>
+          <div class="torch-big-stamp">Ethics Matter.</div>
+        </div>
+      </div>
+      <div class="torch-content reveal">
+        <div class="section-eyebrow">The Award</div>
+        <h2 class="section-title">It's not a star rating.<br>It's a <em>verdict.</em></h2>
+        <p style="color: rgba(255,255,255,0.8); font-size: 1.05rem; line-height: 1.72; margin-bottom: 18px;">The BBB Torch Award doesn't go to the biggest company or the loudest ad budget. It goes to the business that, after a rigorous review of complaints, customer interviews, operational practices, and leadership interviews, <strong style="color:#fff;">has actually earned their reputation over years of consistent ethical conduct.</strong></p>
+        <div class="torch-quote">
+          "Winners are organizations that exemplify the highest standards of ethics in marketplace practices, community relations, and internal business operations."
+          <span class="torch-quote-by">— Better Business Bureau, Torch Award criteria</span>
+        </div>
+        <p style="color: rgba(255,255,255,0.8); font-size: 0.98rem; line-height: 1.7;">For a Wisconsin homeowner choosing a basement contractor, this is the single most meaningful credential to look for. It can't be bought. It can't be faked. It has to be lived.</p>
+        <div class="torch-stats">
+          <div class="torch-stat">
+            <span class="torch-stat-num">22</span>
+            <span class="torch-stat-label">Years BBB Accredited</span>
+          </div>
+          <div class="torch-stat">
+            <span class="torch-stat-num">A+</span>
+            <span class="torch-stat-label">Unblemished Rating</span>
+          </div>
+          <div class="torch-stat">
+            <span class="torch-stat-num">1</span>
+            <span class="torch-stat-label">Torch Award Winner</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMMUNITY -->
+  <section class="community-section">
+    <div class="section-inner">
+      <div class="section-header centered reveal">
+        <div class="section-eyebrow">Beyond the Job Site</div>
+        <h2 class="section-title">We Live Here, <em>Too.</em></h2>
+        <p class="section-desc">Locally owned means something. These are the Wisconsin communities our team lives in, volunteers in, and raises families in.</p>
+      </div>
+      <div class="community-grid">
+        <div class="community-card reveal">
+          <div class="community-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <h4>Great Place to Work</h4>
+          <p>Certified. Our team sticks around. Same faces on your job, year after year.</p>
+        </div>
+        <div class="community-card reveal">
+          <div class="community-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <h4>Habitat for Humanity</h4>
+          <p>Donated waterproofing systems for 40+ Wisconsin builds since 2010.</p>
+        </div>
+        <div class="community-card reveal">
+          <div class="community-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+          </div>
+          <h4>Locally Owned · WI</h4>
+          <p>No franchise. No out-of-state HQ. The buck stops in Appleton.</p>
+        </div>
+        <div class="community-card reveal">
+          <div class="community-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-3 8-11V5l-8-3-8 3v6c0 8 8 11 8 11z"/></svg>
+          </div>
+          <h4>Fully Licensed &amp; Insured</h4>
+          <p>Wisconsin dwelling contractor, bonded, and fully insured for your protection.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <div class="cta-band">
+    <div class="cta-band-inner">
+      <div class="cta-band-eyebrow">Ready When You Are</div>
+      <h2>Let's Fix It the <em>Right Way.</em></h2>
+      <p>Written estimate. Fair price. Lifetime warranty. The way it should be done — the way we've done it for 25 years.</p>
+      <div class="cta-band-actions">
+        <a href="estimate.html" class="btn-white">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          Get My Free Estimate
+        </a>
+        <a href="tel:8555547246" class="btn-outline-white">(855) 554-7246</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo-name">Basement Repair Specialists</div>
+          <span class="footer-logo-sub">A Great Job. At a Great Price.®</span>
+          <p class="footer-bio">Wisconsin's BBB Torch Award–winning basement, foundation, and waterproofing specialists. Locally owned since 1999.</p>
+          <div class="footer-trust-badges">
+            <div class="footer-trust-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>BBB A+</div>
+            <div class="footer-trust-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>2025 Torch</div>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">Services</div>
+          <div class="footer-links">
+            <a href="services.html#waterproofing">Waterproofing</a>
+            <a href="services.html#foundation">Foundation Repair</a>
+            <a href="services.html#crawlspace">Crawl Space</a>
+            <a href="services.html#egress">Egress Windows</a>
+            <a href="services.html#finishing">Basement Finishing</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">Company</div>
+          <div class="footer-links">
+            <a href="about.html">About Us</a>
+            <a href="index.html#reviews">Reviews</a>
+            <a href="index.html#service-area">Service Area</a>
+            <a href="estimate.html">Free Estimate</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">Get In Touch</div>
+          <div class="footer-location">
+            <div class="footer-location-name">Main Office</div>
+            <p>1400 S Van Dyke Rd<br>Appleton, WI 54914</p>
+            <a href="tel:8555547246">(855) 554-7246</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 Basement Repair Specialists LLC</div>
+        <div style="display:flex;gap:20px;"><a href="#">Privacy</a><a href="#">Terms</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="mobile-sticky-cta">
+    <a href="tel:8555547246" class="mobile-sticky-btn mobile-sticky-call">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.61 4.38 2 2 0 0 1 3.59 2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.06 6.06l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 17z"/></svg>
+      Call
+    </a>
+    <a href="estimate.html" class="mobile-sticky-btn mobile-sticky-book">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+      Estimate
+    </a>
+    <button onclick="if(window.sarahChat){sarahChat.toggle();}" class="mobile-sticky-btn mobile-sticky-text" style="font-family:inherit;border:none;cursor:pointer;" aria-label="Chat with Sarah">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      Chat
+    </button>
+  </div>
+
+  <script>
+    function toggleMobileMenu() { document.getElementById('mobile-menu').classList.toggle('open'); }
+    document.querySelectorAll('.mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => document.getElementById('mobile-menu').classList.remove('open'));
+    });
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 60);
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+  </script>
+
+  <!-- Sarah — 24/7 virtual dispatcher -->
+  <script src="/chat-widget.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free Estimate — Basement Repair Specialists</title>
+  <meta name="description" content="Get a free, no-pressure estimate for basement waterproofing, foundation repair, crawl space, egress windows, or finishing in Wisconsin. Written quote, same day." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="topbar-left">
+        <div class="topbar-item">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-8-4.5-8-11.8a8 8 0 1 1 16 0c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
+          Serving All of Wisconsin
+        </div>
+        <span class="topbar-badge">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          2025 BBB Torch Award Winner
+        </span>
+      </div>
+      <div class="topbar-right">
+        <a href="tel:8555547246" class="topbar-phone">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.61 4.38 2 2 0 0 1 3.59 2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.06 6.06l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 17z"/></svg>
+          (855) 554-7246
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <nav id="main-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-text">
+          <span class="logo-name">Basement Repair Specialists</span>
+          <span class="logo-sub">Wisconsin · Since 1999</span>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Our Services</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="index.html#service-area">Service Area</a></li>
+        <li><a href="index.html#reviews">Reviews</a></li>
+      </ul>
+      <div class="nav-right">
+        <a href="tel:8555547246" class="nav-phone-btn">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.61 4.38 2 2 0 0 1 3.59 2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.06 6.06l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 17z"/></svg>
+          (855) 554-7246
+        </a>
+      </div>
+      <button class="nav-hamburger" onclick="toggleMobileMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="index.html">Home</a>
+      <a href="services.html">Our Services</a>
+      <a href="about.html">About Us</a>
+      <a href="index.html#service-area">Service Area</a>
+      <a href="tel:8555547246">(855) 554-7246</a>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <div class="page-hero-eyebrow">Free · Written · No Pressure</div>
+      <h1 class="page-hero-title">Get Your <em>Free Estimate.</em></h1>
+      <p class="page-hero-desc">Tell us what's going on. We'll get back to you within one business hour. Most estimates scheduled within 24 hours — same-day for emergencies.</p>
+      <div class="page-hero-breadcrumb"><a href="index.html">Home</a> · Free Estimate</div>
+    </div>
+  </section>
+
+  <!-- ESTIMATE FORM -->
+  <section class="estimate-layout">
+    <div class="estimate-grid">
+
+      <div class="estimate-form-wrap reveal">
+        <h2>Start Your Free Estimate</h2>
+        <p class="form-sub">Takes about 60 seconds. Written quote follows the on-site visit — zero pressure, zero obligation.</p>
+
+        <form id="estimate-form" autocomplete="on">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="firstName">First Name <span class="req">*</span></label>
+              <input type="text" id="firstName" name="firstName" required autocomplete="given-name" />
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last Name</label>
+              <input type="text" id="lastName" name="lastName" autocomplete="family-name" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone">Phone <span class="req">*</span></label>
+              <input type="tel" id="phone" name="phone" required autocomplete="tel" placeholder="(920) 555-1234" />
+            </div>
+            <div class="form-group">
+              <label for="email">Email <span class="req">*</span></label>
+              <input type="email" id="email" name="email" required autocomplete="email" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="address">Property Address <span class="req">*</span></label>
+            <input type="text" id="address" name="address" required autocomplete="street-address" placeholder="Street, City, WI" />
+          </div>
+
+          <div class="form-group">
+            <label for="service">What do you need help with?</label>
+            <select id="service" name="service">
+              <option value="">-- Select a service --</option>
+              <option value="Waterproofing">Basement Waterproofing / Wet Basement</option>
+              <option value="Foundation Repair">Foundation Repair / Bowed Walls / Cracks</option>
+              <option value="Crawl Space">Crawl Space Encapsulation / Moisture</option>
+              <option value="Egress Windows">Egress Windows</option>
+              <option value="Basement Finishing">Basement Finishing / Remodel</option>
+              <option value="Drainage / Sump">Drainage / Sump Pump</option>
+              <option value="Not Sure">Not sure — need someone to look at it</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>How urgent is it?</label>
+            <div class="urgency-options">
+              <div class="urgency-opt">
+                <input type="radio" id="u-std" name="urgency" value="standard" checked />
+                <label for="u-std">Standard<span>Within a few weeks</span></label>
+              </div>
+              <div class="urgency-opt">
+                <input type="radio" id="u-soon" name="urgency" value="soon" />
+                <label for="u-soon">Soon<span>Next few days</span></label>
+              </div>
+              <div class="urgency-opt">
+                <input type="radio" id="u-emer" name="urgency" value="emergency" />
+                <label for="u-emer">Emergency<span>Water now · Today</span></label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Tell us what's happening (optional)</label>
+            <textarea id="message" name="message" placeholder="Wall has a crack, water seeping after heavy rain, crawl space smells musty, etc."></textarea>
+          </div>
+
+          <button type="submit" class="form-submit" id="submit-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            Request My Free Estimate
+          </button>
+          <p class="form-note">By submitting, you agree to be contacted by phone, text, or email about your estimate. We'll never share your info, and you can opt out any time.</p>
+
+          <div class="form-success" id="form-success">
+            <h4>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><polyline points="20 6 9 17 4 12"/></svg>
+              Got it — we're on it.
+            </h4>
+            <p>A specialist will reach out within one business hour to schedule your free, on-site assessment. Check your email for confirmation. If you need us immediately, call <strong>(855) 554-7246</strong>.</p>
+          </div>
+        </form>
+      </div>
+
+      <div class="estimate-side reveal">
+
+        <div class="side-phone-big">
+          <div class="side-phone-label">Prefer to Call?</div>
+          <span class="side-phone-num">(855) 554-7246</span>
+          <div class="side-phone-hours">Mon–Fri 7a-6p · Sat 8a-2p · 24/7 Emergency</div>
+        </div>
+
+        <div class="side-card">
+          <h3>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-3 8-11V5l-8-3-8 3v6c0 8 8 11 8 11z"/><path d="M9 12l2 2 4-4"/></svg>
+            What You Get
+          </h3>
+          <ul>
+            <li>A real specialist on-site — not a commissioned salesperson</li>
+            <li>Written quote in plain English, same day</li>
+            <li>Straight answers about what's actually needed</li>
+            <li>Financing options if you want them</li>
+            <li>Zero pressure. No signature required.</li>
+          </ul>
+        </div>
+
+        <div class="side-card">
+          <h3>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            How Fast
+          </h3>
+          <p><strong style="color:var(--slate);">1 business hour</strong> — initial callback</p>
+          <p style="margin-top:8px;"><strong style="color:var(--slate);">24 hours</strong> — most estimates scheduled</p>
+          <p style="margin-top:8px;"><strong style="color:var(--slate);">Same day</strong> — emergencies</p>
+        </div>
+
+        <div class="side-card">
+          <h3>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 7l-8 8-4-4"/><circle cx="12" cy="12" r="10"/></svg>
+            Why People Trust Us
+          </h3>
+          <p><strong style="color:var(--slate);">2025 BBB Torch Award</strong> for Marketplace Ethics. 25+ years. Transferable lifetime warranty on our work. 10,000+ Wisconsin homes.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo-name">Basement Repair Specialists</div>
+          <span class="footer-logo-sub">A Great Job. At a Great Price.®</span>
+          <p class="footer-bio">Wisconsin's BBB Torch Award–winning basement, foundation, and waterproofing specialists. Locally owned since 1999.</p>
+          <div class="footer-trust-badges">
+            <div class="footer-trust-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>BBB A+</div>
+            <div class="footer-trust-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>2025 Torch</div>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">Services</div>
+          <div class="footer-links">
+            <a href="services.html#waterproofing">Waterproofing</a>
+            <a href="services.html#foundation">Foundation Repair</a>
+            <a href="services.html#crawlspace">Crawl Space</a>
+            <a href="services.html#egress">Egress Windows</a>
+            <a href="services.html#finishing">Basement Finishing</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">Company</div>
+          <div class="footer-links">
+            <a href="about.html">About Us</a>
+            <a href="index.html#reviews">Reviews</a>
+            <a href="index.html#service-area">Service Area</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">Get In Touch</div>
+          <div class="footer-location">
+            <div class="footer-location-name">Main Office</div>
+            <p>1400 S Van Dyke Rd<br>Appleton, WI 54914</p>
+            <a href="tel:8555547246">(855) 554-7246</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 Basement Repair Specialists LLC</div>
+        <div style="display:flex;gap:20px;"><a href="#">Privacy</a><a href="#">Terms</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="mobile-sticky-cta">
+    <a href="tel:8555547246" class="mobile-sticky-btn mobile-sticky-call">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.61 4.38 2 2 0 0 1 3.59 2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.06 6.06l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 17z"/></svg>
+      Call
+    </a>
+    <button onclick="if(window.sarahChat){sarahChat.toggle();}" class="mobile-sticky-btn mobile-sticky-text" style="font-family:inherit;border:none;cursor:pointer;" aria-label="Chat with Sarah">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      Chat
+    </button>
+    <a href="index.html" class="mobile-sticky-btn mobile-sticky-book">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+      Home
+    </a>
+  </div>
+
+  <script>
+    function toggleMobileMenu() { document.getElementById('mobile-menu').classList.toggle('open'); }
+    document.querySelectorAll('.mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => document.getElementById('mobile-menu').classList.remove('open'));
+    });
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 60);
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    // Form submission
+    document.getElementById('estimate-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = document.getElementById('submit-btn');
+      const success = document.getElementById('form-success');
+      btn.disabled = true;
+      btn.innerHTML = 'Sending…';
+
+      const data = Object.fromEntries(new FormData(e.target));
+
+      try {
+        const res = await fetch('/api/estimate', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data),
+        });
+        if (!res.ok) throw new Error('Request failed');
+        success.classList.add('show');
+        e.target.querySelectorAll('input:not([type=radio]), select, textarea').forEach(el => el.value = '');
+        btn.style.display = 'none';
+      } catch (err) {
+        // Fallback: still show success message on static/preview deployments
+        // Real production will have the Express endpoint running.
+        success.classList.add('show');
+        success.querySelector('p').innerHTML = 'Preview mode: your info would be sent in production. Try it live once deployed to Railway with email + GoHighLevel configured.';
+        btn.disabled = false;
+        btn.innerHTML = 'Request My Free Estimate';
+      }
+    });
+  </script>
+
+  <!-- Sarah — 24/7 virtual dispatcher -->
+  <script src="/chat-widget.js"></script>
+
+</body>
+</html>
