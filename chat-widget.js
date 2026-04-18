@@ -300,7 +300,7 @@
     /* Hide floating button on mobile — chat opens from mobile sticky bar */
     @media (max-width: 768px) {
       #sarah-btn { display: none; }
-      #sarah-modal { bottom: 76px; right: 0; left: 0; width: 100%; max-width: 100%; border-radius: 16px 16px 0 0; height: calc(100vh - 76px); max-height: none; }
+      #sarah-modal { top: 0; bottom: 76px; right: 0; left: 0; width: 100%; max-width: 100%; border-radius: 0; height: auto; max-height: none; }
     }
   `;
 
