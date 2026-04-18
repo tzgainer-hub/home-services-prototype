@@ -67,6 +67,41 @@ Other good patterns:
 
 ---
 
+## SEO Checklist — Required on Every Build (Added April 18, 2026)
+
+Every site we ship must include all of these. No exceptions.
+
+### Per-Page Requirements
+- [ ] **Title tag** — unique, under 60 chars, primary keyword + location + brand
+- [ ] **Meta description** — unique, under 160 chars, compelling, includes CTA language
+- [ ] **Canonical URL** — `<link rel="canonical" href="...">`
+- [ ] **Open Graph tags** — og:type, og:title, og:description, og:url, og:image (1200x630)
+- [ ] **Twitter card tags** — twitter:card, twitter:title, twitter:description, twitter:image
+- [ ] **Exactly one H1** — keyword-rich, matches page intent
+- [ ] **Logical H2/H3 hierarchy** — sections use H2, subsections use H3
+- [ ] **Image alt tags** — descriptive, keyword-relevant where natural
+- [ ] **All phone numbers use `tel:` links**
+- [ ] **NAP consistency** — name, address, phone identical on every page
+
+### Site-Wide Requirements
+- [ ] **JSON-LD schema** — `HomeAndConstructionBusiness` (or `LocalBusiness` / `MedicalBusiness` for white coat) with address, phone, rating, award, founding date
+- [ ] **robots.txt** — allow all, disallow hub.html, point to sitemap
+- [ ] **sitemap.xml** — all public pages with lastmod dates and priority
+- [ ] **Favicon** — linked on every page
+- [ ] **Mobile viewport meta** — `width=device-width, initial-scale=1.0`
+- [ ] **Semantic HTML** — proper nav, section, footer elements
+- [ ] **Internal linking** — every page linked from nav + footer
+- [ ] **Google Maps link or embed** — for service area / location pages
+- [ ] **External trust links** — BBB profile, Google reviews, social profiles in footer
+
+### Performance
+- [ ] **Font preconnect** — `<link rel="preconnect" href="https://fonts.googleapis.com">`
+- [ ] **Images in WebP** where possible
+- [ ] **Scripts at bottom** of body (not in head)
+- [ ] **CSS in single external file** (not inline in HTML)
+
+---
+
 ## File Structure
 
 ```

@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /hub.html
+
+Sitemap: https://basementrepairspecialists.com/sitemap.xml
