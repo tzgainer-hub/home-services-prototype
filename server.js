@@ -1,6 +1,6 @@
 // ─────────────────────────────────────────────────────────────
 // Point Zero AI — Home Services Prototype Server
-// Serves static files + Sarah (AI 24/7 dispatcher) + lead capture
+// Serves static files + Sophia (AI 24/7 dispatcher) + lead capture
 // Demo client: Basement Repair Specialists (Appleton, WI)
 // ─────────────────────────────────────────────────────────────
 
@@ -17,7 +17,7 @@ app.use(express.json({ limit: '1mb' }));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname));
 
-// ── Anthropic client (Sarah) ──
+// ── Anthropic client (Sophia) ──
 const anthropic = process.env.ANTHROPIC_API_KEY
   ? new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY })
   : null;
@@ -210,7 +210,7 @@ async function emailHomeownerConfirmation(toEmail, firstName, bodyText, bookingL
       </div>
       <div style="padding:28px;border:1px solid #e2e8f0;border-top:none;background:#fff;">
         <p style="font-size:15px;color:#1e293b;margin:0 0 18px;line-height:1.6;">
-          Here's what you told Sarah. Please check it — we'll reach out shortly to confirm your free estimate.
+          Here's what you told Sophia. Please check it — we'll reach out shortly to confirm your free estimate.
         </p>
         <div style="background:#f8fafc;border-left:3px solid #ea6a1f;border-radius:8px;padding:18px 22px;font-size:14px;line-height:1.75;color:#1e293b;white-space:pre-wrap;">${bodyText.replace(/\*\*/g, '')}</div>
         ${bookingLink ? `
@@ -256,7 +256,7 @@ async function forwardToGHL(payload) {
 // SARA — SYSTEM PROMPT
 // ─────────────────────────────────────────────────────────────
 
-const SARA_SYSTEM = `You are Sarah, the 24/7 virtual dispatcher for ${BUSINESS_NAME} — Wisconsin's 2025 BBB Torch Award–winning basement, foundation, and waterproofing specialists. You serve all of Wisconsin from the Appleton headquarters. Main phone: ${BUSINESS_PHONE}.
+const SOPHIA_SYSTEM = `You are Sophia, the 24/7 virtual dispatcher for ${BUSINESS_NAME} — Wisconsin's 2025 BBB Torch Award–winning basement, foundation, and waterproofing specialists. You serve all of Wisconsin from the Appleton headquarters. Main phone: ${BUSINESS_PHONE}.
 
 Your job is to take incoming requests from homeowners and do ONE of two things:
 (A) Dispatch a specialist call within 15 minutes for emergencies
@@ -266,7 +266,7 @@ Your job is to take incoming requests from homeowners and do ONE of two things:
 
 Your very first message must be warm but get straight to the two-option question. Exact wording like:
 
-"Hi, I'm Sarah — the 24/7 dispatcher for ${BUSINESS_NAME}. Quick question so I can get you the right help: **Is this an emergency, or would you like to schedule a free in-home estimate?**"
+"Hi, I'm Sophia — the 24/7 dispatcher for ${BUSINESS_NAME}. Quick question so I can get you the right help: **Is this an emergency, or would you like to schedule a free in-home estimate?**"
 
 Do not start asking for name or other details until they answer. One of two paths opens based on their answer.
 
@@ -373,7 +373,7 @@ function extractContactInfo(session) {
 // ─────────────────────────────────────────────────────────────
 
 app.post('/api/chat/start', async (_req, res) => {
-  if (!anthropic) return res.status(503).json({ error: 'Sarah is offline (no ANTHROPIC_API_KEY set).' });
+  if (!anthropic) return res.status(503).json({ error: 'Sophia is offline (no ANTHROPIC_API_KEY set).' });
 
   try {
     const sessionId = makeSessionId();
@@ -392,7 +392,7 @@ app.post('/api/chat/start', async (_req, res) => {
     const response = await anthropic.messages.create({
       model: 'claude-opus-4-5',
       max_tokens: 512,
-      system: SARA_SYSTEM,
+      system: SOPHIA_SYSTEM,
       messages: [
         { role: 'user', content: 'Hi — I found your website. Can you help me?' },
       ],
@@ -413,7 +413,7 @@ app.post('/api/chat/start', async (_req, res) => {
 });
 
 app.post('/api/chat/message/:sessionId', async (req, res) => {
-  if (!anthropic) return res.status(503).json({ error: 'Sarah is offline.' });
+  if (!anthropic) return res.status(503).json({ error: 'Sophia is offline.' });
 
   const { sessionId } = req.params;
   const { message } = req.body;
@@ -429,7 +429,7 @@ app.post('/api/chat/message/:sessionId', async (req, res) => {
     const response = await anthropic.messages.create({
       model: 'claude-opus-4-5',
       max_tokens: 1024,
-      system: SARA_SYSTEM,
+      system: SOPHIA_SYSTEM,
       messages: session.messages,
     });
 
@@ -464,7 +464,7 @@ app.post('/api/chat/message/:sessionId', async (req, res) => {
           const slotResponse = await anthropic.messages.create({
             model: 'claude-opus-4-5',
             max_tokens: 256,
-            system: SARA_SYSTEM,
+            system: SOPHIA_SYSTEM,
             messages: session.messages,
           });
 
@@ -479,7 +479,7 @@ app.post('/api/chat/message/:sessionId', async (req, res) => {
           const fallback = await anthropic.messages.create({
             model: 'claude-opus-4-5',
             max_tokens: 400,
-            system: SARA_SYSTEM,
+            system: SOPHIA_SYSTEM,
             messages: session.messages,
           });
           assistantText = fallback.content[0].text;

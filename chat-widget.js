@@ -1,6 +1,6 @@
 (function () {
   // ─────────────────────────────────────────────────────────────
-  // Sarah — 24/7 Virtual Dispatcher Widget
+  // Sophia — 24/7 Virtual Dispatcher Widget
   // Forked from dental-prototype; restyled with Trusted Trade palette
   // ─────────────────────────────────────────────────────────────
 
@@ -10,7 +10,7 @@
 
   // ── Styles ──
   const css = `
-    #sarah-btn {
+    #sophia-btn {
       position: fixed;
       bottom: 28px;
       right: 28px;
@@ -31,24 +31,24 @@
       transition: transform 0.2s, box-shadow 0.2s;
       letter-spacing: 0.01em;
     }
-    #sarah-btn:hover {
+    #sophia-btn:hover {
       transform: translateY(-2px);
       box-shadow: 0 12px 32px rgba(15,30,58,0.45);
     }
-    #sarah-btn .sarah-pulse {
+    #sophia-btn .sophia-pulse {
       width: 9px; height: 9px;
       background: #22c55e;
       border-radius: 50%;
       flex-shrink: 0;
-      animation: sarah-pulse 2.2s infinite;
+      animation: sophia-pulse 2.2s infinite;
       box-shadow: 0 0 0 0 rgba(34,197,94,0.6);
     }
-    @keyframes sarah-pulse {
+    @keyframes sophia-pulse {
       0%   { box-shadow: 0 0 0 0 rgba(34,197,94,0.6); }
       70%  { box-shadow: 0 0 0 10px rgba(34,197,94,0); }
       100% { box-shadow: 0 0 0 0 rgba(34,197,94,0); }
     }
-    #sarah-modal {
+    #sophia-modal {
       display: none;
       position: fixed;
       bottom: 92px;
@@ -66,8 +66,8 @@
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       border: 1px solid rgba(15,30,58,0.08);
     }
-    #sarah-modal.open { display: flex; }
-    .sarah-header {
+    #sophia-modal.open { display: flex; }
+    .sophia-header {
       background: linear-gradient(135deg, #0f1e3a 0%, #1e3456 100%);
       color: #fff;
       padding: 18px 20px;
@@ -78,7 +78,7 @@
       position: relative;
       overflow: hidden;
     }
-    .sarah-header::before {
+    .sophia-header::before {
       content: '';
       position: absolute;
       top: -40px; right: -40px;
@@ -86,7 +86,7 @@
       border-radius: 50%;
       background: rgba(234,106,31,0.18);
     }
-    .sarah-avatar {
+    .sophia-avatar {
       width: 44px; height: 44px;
       background: #ea6a1f;
       border-radius: 50%;
@@ -101,7 +101,7 @@
       position: relative;
       box-shadow: 0 4px 12px rgba(234,106,31,0.4);
     }
-    .sarah-avatar::after {
+    .sophia-avatar::after {
       content: '';
       position: absolute;
       bottom: -1px; right: -1px;
@@ -110,15 +110,15 @@
       border: 2px solid #0f1e3a;
       border-radius: 50%;
     }
-    .sarah-header-text { position: relative; flex: 1; }
-    .sarah-title {
+    .sophia-header-text { position: relative; flex: 1; }
+    .sophia-title {
       font-weight: 800;
       font-size: 15px;
       margin: 0 0 2px 0;
       font-family: 'Outfit', sans-serif;
       letter-spacing: -0.01em;
     }
-    .sarah-subtitle {
+    .sophia-subtitle {
       font-size: 12px;
       opacity: 0.82;
       margin: 0;
@@ -126,14 +126,14 @@
       align-items: center;
       gap: 5px;
     }
-    .sarah-subtitle::before {
+    .sophia-subtitle::before {
       content: '';
       width: 6px; height: 6px;
       background: #22c55e;
       border-radius: 50%;
       display: inline-block;
     }
-    .sarah-close {
+    .sophia-close {
       margin-left: auto;
       background: none;
       border: none;
@@ -144,8 +144,8 @@
       transition: opacity 0.15s;
       position: relative;
     }
-    .sarah-close:hover { opacity: 1; }
-    .sarah-messages {
+    .sophia-close:hover { opacity: 1; }
+    .sophia-messages {
       flex: 1;
       overflow-y: auto;
       padding: 18px 16px;
@@ -154,7 +154,7 @@
       gap: 10px;
       background: #f8fafc;
     }
-    .sarah-bubble {
+    .sophia-bubble {
       max-width: 88%;
       padding: 11px 14px;
       border-radius: 14px;
@@ -162,20 +162,20 @@
       line-height: 1.55;
       color: #1e293b;
     }
-    .sarah-bubble.agent {
+    .sophia-bubble.agent {
       background: #fff;
       border: 1px solid #e2e8f0;
       align-self: flex-start;
       border-bottom-left-radius: 4px;
       box-shadow: 0 1px 3px rgba(15,30,58,0.06);
     }
-    .sarah-bubble.user {
+    .sophia-bubble.user {
       background: #0f1e3a;
       color: #fff;
       align-self: flex-end;
       border-bottom-right-radius: 4px;
     }
-    .sarah-bubble.status {
+    .sophia-bubble.status {
       background: #fff4ec;
       border: 1px dashed #f4a368;
       align-self: center;
@@ -184,7 +184,7 @@
       padding: 9px 14px;
       text-align: center;
     }
-    .sarah-typing {
+    .sophia-typing {
       display: flex;
       gap: 5px;
       align-items: center;
@@ -196,19 +196,19 @@
       align-self: flex-start;
       box-shadow: 0 1px 3px rgba(15,30,58,0.06);
     }
-    .sarah-typing span {
+    .sophia-typing span {
       width: 7px; height: 7px;
       background: #94a3b8;
       border-radius: 50%;
-      animation: sarah-typing 1.3s infinite;
+      animation: sophia-typing 1.3s infinite;
     }
-    .sarah-typing span:nth-child(2) { animation-delay: 0.18s; }
-    .sarah-typing span:nth-child(3) { animation-delay: 0.36s; }
-    @keyframes sarah-typing {
+    .sophia-typing span:nth-child(2) { animation-delay: 0.18s; }
+    .sophia-typing span:nth-child(3) { animation-delay: 0.36s; }
+    @keyframes sophia-typing {
       0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
       30%           { transform: translateY(-5px); opacity: 1; }
     }
-    .sarah-success-notice {
+    .sophia-success-notice {
       background: #ecfdf5;
       border: 1.5px solid #86efac;
       border-radius: 10px;
@@ -220,7 +220,7 @@
       max-width: 94%;
       line-height: 1.5;
     }
-    .sarah-urgent-notice {
+    .sophia-urgent-notice {
       background: #fff7ed;
       border: 1.5px solid #fb923c;
       border-radius: 10px;
@@ -233,13 +233,13 @@
       line-height: 1.5;
       font-weight: 600;
     }
-    .sarah-success-notice strong, .sarah-urgent-notice strong {
+    .sophia-success-notice strong, .sophia-urgent-notice strong {
       display: block;
       font-family: 'Outfit', sans-serif;
       font-size: 14px;
       margin-bottom: 4px;
     }
-    .sarah-save-btn {
+    .sophia-save-btn {
       background: #0f1e3a;
       color: #fff;
       border: none;
@@ -254,8 +254,8 @@
       align-items: center;
       gap: 6px;
     }
-    .sarah-save-btn:hover { background: #1e3456; }
-    .sarah-input-area {
+    .sophia-save-btn:hover { background: #1e3456; }
+    .sophia-input-area {
       padding: 12px 14px;
       background: #fff;
       border-top: 1px solid #e2e8f0;
@@ -263,7 +263,7 @@
       gap: 8px;
       flex-shrink: 0;
     }
-    #sarah-input {
+    #sophia-input {
       flex: 1;
       border: 1.5px solid #cbd5e1;
       border-radius: 10px;
@@ -274,12 +274,12 @@
       color: #1e293b;
       transition: border-color 0.15s, box-shadow 0.15s;
     }
-    #sarah-input:focus {
+    #sophia-input:focus {
       border-color: #2563eb;
       box-shadow: 0 0 0 3px rgba(37,99,235,0.15);
     }
-    #sarah-input:disabled { background: #f8fafc; color: #94a3b8; }
-    #sarah-send {
+    #sophia-input:disabled { background: #f8fafc; color: #94a3b8; }
+    #sophia-send {
       background: #ea6a1f;
       color: #fff;
       border: none;
@@ -294,13 +294,13 @@
       transition: background 0.15s;
       align-self: flex-end;
     }
-    #sarah-send:hover:not(:disabled) { background: #c2531a; }
-    #sarah-send:disabled { background: #cbd5e1; cursor: default; }
+    #sophia-send:hover:not(:disabled) { background: #c2531a; }
+    #sophia-send:disabled { background: #cbd5e1; cursor: default; }
 
     /* Hide floating button on mobile — chat opens from mobile sticky bar */
     @media (max-width: 768px) {
-      #sarah-btn { display: none; }
-      #sarah-modal { top: 0; bottom: 76px; right: 0; left: 0; width: 100%; max-width: 100%; border-radius: 0; height: auto; max-height: none; }
+      #sophia-btn { display: none; }
+      #sophia-modal { top: 0; bottom: 76px; right: 0; left: 0; width: 100%; max-width: 100%; border-radius: 0; height: auto; max-height: none; }
     }
   `;
 
@@ -310,26 +310,26 @@
 
   // ── HTML ──
   document.body.insertAdjacentHTML('beforeend', `
-    <button id="sarah-btn" onclick="window.sarahChat.toggle()" aria-label="Chat with Sarah">
-      <span class="sarah-pulse"></span>
-      Chat with Sarah · 24/7
+    <button id="sophia-btn" onclick="window.sophiaChat.toggle()" aria-label="Chat with Sophia">
+      <span class="sophia-pulse"></span>
+      Chat with Sophia · 24/7
     </button>
 
-    <div id="sarah-modal" role="dialog" aria-label="Chat with Sarah">
-      <div class="sarah-header">
-        <div class="sarah-avatar">S</div>
-        <div class="sarah-header-text">
-          <p class="sarah-title">Sarah · 24/7 Dispatcher</p>
-          <p class="sarah-subtitle">Online now · Usually replies instantly</p>
+    <div id="sophia-modal" role="dialog" aria-label="Chat with Sophia">
+      <div class="sophia-header">
+        <div class="sophia-avatar">S</div>
+        <div class="sophia-header-text">
+          <p class="sophia-title">Sophia · 24/7 Dispatcher</p>
+          <p class="sophia-subtitle">Online now · Usually replies instantly</p>
         </div>
-        <button class="sarah-close" onclick="window.sarahChat.toggle()" aria-label="Close">
+        <button class="sophia-close" onclick="window.sophiaChat.toggle()" aria-label="Close">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
         </button>
       </div>
-      <div class="sarah-messages" id="sarah-messages"></div>
-      <div class="sarah-input-area">
-        <input type="text" id="sarah-input" placeholder="Type your message…" disabled autocomplete="off" />
-        <button id="sarah-send" disabled onclick="window.sarahChat.sendMessage()" aria-label="Send">
+      <div class="sophia-messages" id="sophia-messages"></div>
+      <div class="sophia-input-area">
+        <input type="text" id="sophia-input" placeholder="Type your message…" disabled autocomplete="off" />
+        <button id="sophia-send" disabled onclick="window.sophiaChat.sendMessage()" aria-label="Send">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
         </button>
       </div>
@@ -340,15 +340,15 @@
   let sessionId = null;
   const transcript = [];
 
-  const modal    = document.getElementById('sarah-modal');
-  const messages = document.getElementById('sarah-messages');
-  const input    = document.getElementById('sarah-input');
-  const sendBtn  = document.getElementById('sarah-send');
+  const modal    = document.getElementById('sophia-modal');
+  const messages = document.getElementById('sophia-messages');
+  const input    = document.getElementById('sophia-input');
+  const sendBtn  = document.getElementById('sophia-send');
 
   // ── Helpers ──
   function addBubble(text, role) {
     const div = document.createElement('div');
-    div.className = `sarah-bubble ${role}`;
+    div.className = `sophia-bubble ${role}`;
     div.textContent = text;
     messages.appendChild(div);
     messages.scrollTop = messages.scrollHeight;
@@ -357,14 +357,14 @@
 
   function showTyping() {
     const el = document.createElement('div');
-    el.className = 'sarah-typing';
-    el.id = 'sarah-typing-indicator';
+    el.className = 'sophia-typing';
+    el.id = 'sophia-typing-indicator';
     el.innerHTML = '<span></span><span></span><span></span>';
     messages.appendChild(el);
     messages.scrollTop = messages.scrollHeight;
   }
   function hideTyping() {
-    const el = document.getElementById('sarah-typing-indicator');
+    const el = document.getElementById('sophia-typing-indicator');
     if (el) el.remove();
   }
 
@@ -376,14 +376,14 @@
 
   function showUrgentNotice() {
     const div = document.createElement('div');
-    div.className = 'sarah-urgent-notice';
+    div.className = 'sophia-urgent-notice';
     div.innerHTML = `
       <strong>Dispatched — Expect a call within 15 minutes</strong>
       A specialist will call you from ${BUSINESS_PHONE_DISPLAY}. If you don't hear from us in 15 minutes, call us directly.
       <div style="margin-top:10px;">
         <a href="tel:${BUSINESS_PHONE_TEL}" style="display:inline-block;background:#ea6a1f;color:#fff;text-decoration:none;border-radius:8px;padding:9px 18px;font-size:13px;font-weight:800;font-family:'Outfit',sans-serif;">Call ${BUSINESS_PHONE_DISPLAY}</a>
       </div>
-      <button class="sarah-save-btn" onclick="window.sarahChat.saveTranscript()" style="margin-top:10px;">
+      <button class="sophia-save-btn" onclick="window.sophiaChat.saveTranscript()" style="margin-top:10px;">
         Save My Conversation
       </button>
     `;
@@ -393,12 +393,12 @@
 
   function showSuccessNotice(withBooking = false) {
     const div = document.createElement('div');
-    div.className = 'sarah-success-notice';
+    div.className = 'sophia-success-notice';
     if (withBooking) {
       div.innerHTML = `
         <strong>One last step</strong>
         Tap "Lock In My Appointment" above to confirm your slot. We'll email you the details right after.
-        <button class="sarah-save-btn" onclick="window.sarahChat.saveTranscript()">
+        <button class="sophia-save-btn" onclick="window.sophiaChat.saveTranscript()">
           Save My Conversation
         </button>
       `;
@@ -406,7 +406,7 @@
       div.innerHTML = `
         <strong>✓ Request received</strong>
         Check your email for confirmation. A specialist will call within one business hour to lock in a time.
-        <button class="sarah-save-btn" onclick="window.sarahChat.saveTranscript()">
+        <button class="sophia-save-btn" onclick="window.sophiaChat.saveTranscript()">
           Save My Conversation
         </button>
       `;
@@ -488,7 +488,7 @@
   }
 
   // ── Public API ──
-  window.sarahChat = {
+  window.sophiaChat = {
     toggle() {
       const isOpen = modal.classList.contains('open');
       if (isOpen) {
@@ -501,7 +501,7 @@
 
     saveTranscript() {
       const lines = transcript.map((m) => {
-        const label = m.role === 'agent' ? `Sarah (${BUSINESS_NAME})` : 'You';
+        const label = m.role === 'agent' ? `Sophia (${BUSINESS_NAME})` : 'You';
         return `${label}:\n${m.text}`;
       });
       const content = [
@@ -558,13 +558,13 @@
   };
 
   // ── Alias for any legacy handlers ──
-  window.aiChat = window.sarahChat;
+  window.aiChat = window.sophiaChat;
 
   // Enter to send
-  document.getElementById('sarah-input').addEventListener('keydown', (e) => {
+  document.getElementById('sophia-input').addEventListener('keydown', (e) => {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
-      window.sarahChat.sendMessage();
+      window.sophiaChat.sendMessage();
     }
   });
 })();
