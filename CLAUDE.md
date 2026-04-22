@@ -141,6 +141,7 @@ The estimate form POSTs to `/api/estimate` which:
 5. **Phone number is sacred.** Must be clickable `tel:` everywhere it appears — topbar, nav, hero, service cards, CTA bands, footer, mobile sticky bar.
 6. **Written quotes, not "contact us."** Homeowner CTAs are always "Get My Free Estimate," never "Request Information."
 7. **No agency fluff.** "Innovative solutions," "cutting-edge," "world-class" — banned. Write like a tradesperson who happens to be good at copy.
+8. **Google Map is mandatory on the homepage** (added 2026-04-22). Every site gets a `.find-us` section with an embedded Google Maps iframe + address + clickable phone + "Get Directions" button, placed just before the CTA band. This is a trust signal + local SEO requirement. Only skip if the client explicitly says no.
 
 ---
 
