@@ -390,7 +390,7 @@ app.post('/api/chat/start', async (_req, res) => {
     });
 
     const response = await anthropic.messages.create({
-      model: 'claude-opus-4-5',
+      model: 'claude-haiku-4-5',
       max_tokens: 512,
       system: SOPHIA_SYSTEM,
       messages: [
@@ -427,7 +427,7 @@ app.post('/api/chat/message/:sessionId', async (req, res) => {
 
   try {
     const response = await anthropic.messages.create({
-      model: 'claude-opus-4-5',
+      model: 'claude-haiku-4-5',
       max_tokens: 1024,
       system: SOPHIA_SYSTEM,
       messages: session.messages,
@@ -462,7 +462,7 @@ app.post('/api/chat/message/:sessionId', async (req, res) => {
           });
 
           const slotResponse = await anthropic.messages.create({
-            model: 'claude-opus-4-5',
+            model: 'claude-haiku-4-5',
             max_tokens: 256,
             system: SOPHIA_SYSTEM,
             messages: session.messages,
@@ -477,7 +477,7 @@ app.post('/api/chat/message/:sessionId', async (req, res) => {
             content: '[SYSTEM: No online slots matched. Tell the homeowner that our team will call them within one business hour to find a time that works.]',
           });
           const fallback = await anthropic.messages.create({
-            model: 'claude-opus-4-5',
+            model: 'claude-haiku-4-5',
             max_tokens: 400,
             system: SOPHIA_SYSTEM,
             messages: session.messages,
